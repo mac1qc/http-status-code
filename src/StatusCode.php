@@ -8,8 +8,6 @@ use Exception;
 
 enum StatusCode: int
 {
-    const __default = 0;
-
     case CONTINUE               = 100;
     case SWITCHING_PROTOCOL     = 101;
     case PROCESSING             = 102;
@@ -19,30 +17,21 @@ enum StatusCode: int
     case DISCONNECTED_OPERATION = 112;
     case HEURISTIC_EXPIRATION   = 113;
     case MISCELLANOUS_WARNING   = 199;
-    /*
-    100 Continue
-    101 Switching Protocols
-    102 Processing (WebDAV; RFC 2518)
-    103 Early Hints (RFC 8297)
-    110 Response is Stale
-    111 Revalidation Failed
-    112 Disconnected Operation
-    113 Heuristic Expiration
-    199 Miscellaneous Warning
 
-    200 OK
-    201 Created
-    202 Accepted
-    203 Non-Authoritative Information (since HTTP/1.1)
-    204 No Content
-    205 Reset Content
-    206 Partial Content
-    207 Multi-Status (WebDAV; RFC 4918)
-    208 Already Reported (WebDAV; RFC 5842)
-    214 Transformation Applied
-    218 This is fine 
-    226 IM Used (RFC 3229)
-    299 Miscellaneous Persistent Warning
+    case OK                               = 200;
+    case CREATED                          = 201;
+    case ACCEPTED                         = 202;
+    case NON_AUTHORITATIVE                = 203;
+    case NO_CONTENT                       = 204;
+    case RESET_CONTENT                    = 205;
+    case PARTIAL_CONTENT                  = 206;
+    case MULTI_STATUS                     = 207;
+    case ALREADY_REPORTED                 = 208;
+    case TRANSFORMATION_APPLIED           = 214;
+    case THIS_IS_FINE                     = 218;
+    case IM_USED                          = 226;
+    case MISCELLANEOUS_PERSISTENT_WARNING = 299;
+    /*
 
     300 Multiple Choices
     301 Moved Permanently
@@ -137,15 +126,28 @@ enum StatusCode: int
     public static function getLabel(self $value): string
     {
         return match ($value) {
-            self::CONTINUE               => 'Continue',
-            self::SWITCHING_PROTOCOL     => 'Switching Protocols',
-            self::PROCESSING             => 'Processing',
-            self::EARLY_HINTS            => 'Early Hints',
-            self::RESPONSE_STALE         => 'Response is Stale',
-            self::REVILIDATION_FAILED    => 'Revalidation Failed',
-            self::DISCONNECTED_OPERATION => 'Disconnected Operation',
-            self::HEURISTIC_EXPIRATION   => 'Heuristic Expiration',
-            self::MISCELLANOUS_WARNING   => 'Miscellaneous Warning',
+            self::CONTINUE                         => 'Continue',
+            self::SWITCHING_PROTOCOL               => 'Switching Protocols',
+            self::PROCESSING                       => 'Processing',
+            self::EARLY_HINTS                      => 'Early Hints',
+            self::RESPONSE_STALE                   => 'Response is Stale',
+            self::REVILIDATION_FAILED              => 'Revalidation Failed',
+            self::DISCONNECTED_OPERATION           => 'Disconnected Operation',
+            self::HEURISTIC_EXPIRATION             => 'Heuristic Expiration',
+            self::MISCELLANOUS_WARNING             => 'Miscellaneous Warning',
+            self::OK                               => 'OK',
+            self::CREATED                          => 'Created',
+            self::ACCEPTED                         => 'Accepted',
+            self::NON_AUTHORITATIVE                => 'Non-Authoritative Information',
+            self::NO_CONTENT                       => 'No Content',
+            self::RESET_CONTENT                    => 'Reset Content',
+            self::PARTIAL_CONTENT                  => 'Partial Content',
+            self::MULTI_STATUS                     => 'Multi-Status',
+            self::ALREADY_REPORTED                 => 'Already Reported',
+            self::TRANSFORMATION_APPLIED           => 'Transformation Applied',
+            self::THIS_IS_FINE                     => 'This is fine',
+            self::IM_USED                          => 'IM Used',
+            self::MISCELLANEOUS_PERSISTENT_WARNING => 'Miscellaneous Persistent Warning',
         };
     }
 }

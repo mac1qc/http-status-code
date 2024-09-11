@@ -1,0 +1,24 @@
+{
+    "name": "mac1qc/http-status-code",
+    "description": "Helper to get HTTP status code by using common name",
+    "autoload": {
+        "psr-4": {
+            "MartinAC\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Martin AC",
+            "email": "mac@martin-ayotte.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^11.3"
+    }
+}

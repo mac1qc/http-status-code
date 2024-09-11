@@ -1,5 +1,6 @@
 /vendor/
 composer.lock
 .DS_Store
-.php-unit
+/.php-unit.cache/
+test-results
 .git

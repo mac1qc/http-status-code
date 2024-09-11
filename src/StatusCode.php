@@ -31,18 +31,18 @@ enum StatusCode: int
     case THIS_IS_FINE                     = 218;
     case IM_USED                          = 226;
     case MISCELLANEOUS_PERSISTENT_WARNING = 299;
+
+    case MULTIPLE_CHOICES   = 300;
+    case MOVED_PERMAMENTLY  = 301;
+    case MOVED_TEMPORARILY  = 302;
+    case FOUND              = 302;
+    case SEE_OTHER          = 303;
+    case NOT_MODIFIED       = 304;
+    case USE_PROXY          = 305;
+    case SWITCH_PROXY       = 306;
+    case TEMPORARY_REDIRECT = 307;
+    case PERMANENT_REDIRECT = 308;
     /*
-
-    300 Multiple Choices
-    301 Moved Permanently
-    302 Found (Previously "Moved temporarily")
-    303 See Other (since HTTP/1.1)
-    304 Not Modified
-    305 Use Proxy (since HTTP/1.1)
-    306 Switch Proxy
-    307 Temporary Redirect (since HTTP/1.1)
-    308 Permanent Redirect
-
     400 Bad Request
     401 Unauthorized
     402 Payment Required
@@ -148,6 +148,16 @@ enum StatusCode: int
             self::THIS_IS_FINE                     => 'This is fine',
             self::IM_USED                          => 'IM Used',
             self::MISCELLANEOUS_PERSISTENT_WARNING => 'Miscellaneous Persistent Warning',
+            self::MULTIPLE_CHOICES                 => 'Multiple Choices',
+            self::MOVED_PERMAMENTLY                => 'Moved Permanently',
+            self::MOVED_TEMPORARILY                => 'Moved temporarily',
+            self::FOUND                            => 'Found',
+            self::SEE_OTHER                        => 'See Other',
+            self::NOT_MODIFIED                     => 'Not Modified',
+            self::USE_PROXY                        => 'Use Proxy',
+            self::SWITCH_PROXY                     => 'Switch Proxy',
+            self::TEMPORARY_REDIRECT               => 'Temporary Redirect',
+            self::PERMANENT_REDIRECT               => 'Permanent Redirect',
         };
     }
 }

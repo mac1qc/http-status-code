@@ -17,7 +17,7 @@
             "email": "mac@martin-ayotte.net"
         }
     ],
-    "license": "MIT License",
+    "license": "MIT",
     "minimum-stability": "stable",
     "require": {
         "php": "^8.1"
